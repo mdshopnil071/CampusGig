@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-base-200 text-base-content antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 132, 199, 0.6);
+}
+
+/* 3D Perspective & Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-800 {
+  perspective: 800px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+[data-theme="campus-dark"] .glass-panel {
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.65);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+[data-theme="campus-dark"] .glass-panel-subtle {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.45);
+}
+
+/* High-tech subtle grid pattern */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="campus-dark"] .bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+}
+
+/* Micro-dots pattern */
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+[data-theme="campus-dark"] .bg-tech-dots {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gradient text helpers (Electric Blue to Cyan/Emerald - ZERO PURPLE) */
+.text-gradient-electric {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="campus-dark"] .text-gradient-electric {
+  background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #059669 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="campus-dark"] .text-gradient-emerald {
+  background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle glow effects */
+.glow-electric {
+  box-shadow: 0 0 25px -4px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="campus-dark"] .glow-electric {
+  box-shadow: 0 0 30px -4px rgba(56, 189, 248, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.25);
+}
+
+[data-theme="campus-dark"] .glow-cyan {
+  box-shadow: 0 0 30px -4px rgba(45, 212, 191, 0.3);
+}
+
+/* ==========================================================
+   DARK MODE CONTRAST & TYPOGRAPHY FIXES (High Readability)
+   ========================================================== */
+
+[data-theme="campus-dark"],
+.dark {
+  color-scheme: dark;
+}
+
+/* In dark mode, all primary headings and text-neutral elements must be crisp, vibrant white */
+[data-theme="campus-dark"] .text-neutral,
+.dark .text-neutral,
+[data-theme="campus-dark"] h1,
+[data-theme="campus-dark"] h2,
+[data-theme="campus-dark"] h3,
+[data-theme="campus-dark"] h4,
+[data-theme="campus-dark"] h5,
+[data-theme="campus-dark"] h6,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #f8fafc !important;
+}
+
+/* Ensure form controls, inputs, and selects have bright readable text in dark mode */
+[data-theme="campus-dark"] input:not([type="checkbox"]):not([type="radio"]),
+[data-theme="campus-dark"] textarea,
+[data-theme="campus-dark"] select,
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select {
+  color: #f8fafc !important;
+}
+
+[data-theme="campus-dark"] select option,
+.dark select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Enhance legibility of muted and secondary text on dark surfaces */
+[data-theme="campus-dark"] .text-base-content\/70,
+.dark .text-base-content\/70 {
+  color: rgba(241, 245, 249, 0.82) !important;
+}
+
+[data-theme="campus-dark"] .text-base-content\/60,
+.dark .text-base-content\/60 {
+  color: rgba(241, 245, 249, 0.72) !important;
+}
+
+[data-theme="campus-dark"] .text-base-content\/80,
+.dark .text-base-content\/80 {
+  color: rgba(241, 245, 249, 0.92) !important;
+}
+
+[data-theme="campus-dark"] .placeholder\:text-base-content\/40::placeholder,
+.dark .placeholder\:text-base-content\/40::placeholder {
+  color: rgba(241, 245, 249, 0.45) !important;
+}
