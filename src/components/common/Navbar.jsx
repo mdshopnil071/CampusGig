@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useNotifications } from '../../context/NotificationContext';
 import { useSavedGigs } from '../../context/SavedGigsContext';
 import { ThemeToggle } from './ThemeToggle';
+import { CampusGigLogo } from './CampusGigLogo';
 import { 
   FiHeart, 
   FiBell, 
@@ -42,24 +43,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Brand Logo */}
           <div className="flex items-center gap-6 lg:gap-8">
-            <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="relative">
-                <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-sky-600 to-cyan-500 flex items-center justify-center text-white text-xl shadow-md shadow-primary/25 group-hover:scale-105 group-hover:shadow-primary/40 transition-all duration-300">
-                  🎓
-                </span>
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-base-100 flex items-center justify-center text-[8px] text-white">
-                  ✓
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <div className="font-extrabold text-xl tracking-tight text-neutral flex items-center gap-1 leading-none">
-                  Campus<span className="text-gradient-electric font-black">Gig</span>
-                </div>
-                <span className="text-[10px] text-base-content/60 font-semibold tracking-wider uppercase mt-1">
-                  Student Marketplace
-                </span>
-              </div>
-            </Link>
+            <CampusGigLogo to="/" size="md" showText={true} showSubtitle={true} showVerifiedDot={true} />
 
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-1.5 lg:gap-2">

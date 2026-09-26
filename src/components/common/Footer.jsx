@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShield, FiCheckCircle } from 'react-icons/fi';
+import { CampusGigLogo } from './CampusGigLogo';
 import { ACADEMIC_INTEGRITY_PLEDGE } from '../../data/universityData';
 
 export const Footer = () => {
@@ -12,14 +13,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
           <div className="space-y-4 md:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary via-sky-600 to-cyan-500 flex items-center justify-center text-white text-xl shadow-md shadow-primary/20">
-                🎓
-              </span>
-              <div className="font-extrabold text-xl text-white tracking-tight leading-none">
-                Campus<span className="text-gradient-electric font-black">Gig</span>
-              </div>
-            </div>
+            <CampusGigLogo to="/" size="md" showText={true} showSubtitle={false} textColor="white" />
             <p className="text-xs text-slate-300 leading-relaxed font-normal">
               The dedicated freelance micro-task and peer tutoring platform built exclusively for university students. Monetize your technical skills, build a verified portfolio, and collaborate ethically.
             </p>

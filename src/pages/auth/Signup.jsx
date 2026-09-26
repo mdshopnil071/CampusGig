@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { UNIVERSITIES } from '../../data/universityData';
 import { FiUser, FiMail, FiLock, FiBookOpen, FiArrowRight, FiShield } from 'react-icons/fi';
+import { CampusGigLogo } from '../../components/common/CampusGigLogo';
 import toast from 'react-hot-toast';
 
 export const Signup = () => {
@@ -55,9 +56,7 @@ export const Signup = () => {
   return (
     <div className="max-w-md mx-auto my-10 p-8 bg-base-100 rounded-3xl border border-base-200 shadow-xl space-y-6">
       <div className="text-center space-y-2">
-        <span className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary via-sky-600 to-cyan-500 text-white flex items-center justify-center text-2xl mx-auto shadow-md shadow-primary/20">
-          🎓
-        </span>
+        <CampusGigLogo size="lg" showText={false} className="justify-center mx-auto mb-2" />
         <h2 className="text-2xl font-black text-neutral tracking-tight">
           Join CampusGig
         </h2>

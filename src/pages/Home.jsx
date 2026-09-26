@@ -359,9 +359,7 @@ export const Home = () => {
             </div>
 
             <div className="absolute -bottom-5 -left-2 sm:-left-4 p-3 rounded-2xl bg-base-100/95 backdrop-blur-md border border-base-300 shadow-xl hidden sm:flex items-center gap-2.5 animate-float-reverse z-20">
-              <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center font-bold text-lg">
-                🎓
-              </div>
+              <img src="/logo-64.png" alt="Campus Trust" className="w-8 h-8 rounded-lg shadow-xs ring-1 ring-base-300" />
               <div className="text-left">
                 <div className="text-xs font-black text-neutral">Campus Trust</div>
                 <div className="text-[10px] text-base-content/60">Zero-cheating integrity</div>

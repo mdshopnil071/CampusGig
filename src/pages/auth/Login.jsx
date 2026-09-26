@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { FiMail, FiLock, FiArrowRight, FiShield } from 'react-icons/fi';
+import { CampusGigLogo } from '../../components/common/CampusGigLogo';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -29,9 +30,7 @@ export const Login = () => {
   return (
     <div className="max-w-md mx-auto my-12 p-8 bg-base-100 rounded-3xl border border-base-200 shadow-xl space-y-6">
       <div className="text-center space-y-2">
-        <span className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto shadow-xs">
-          🎓
-        </span>
+        <CampusGigLogo size="lg" showText={false} className="justify-center mx-auto mb-2" />
         <h2 className="text-2xl font-black text-neutral tracking-tight">
           Welcome to CampusGig
         </h2>
